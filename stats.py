@@ -33,7 +33,7 @@ update_interval = 5 # secs
 # node params
 node_addr = "127.0.0.1"
 node_port = "1234"
-node == None
+node = None
 
 def update_stats(node):
   return True # TODO
