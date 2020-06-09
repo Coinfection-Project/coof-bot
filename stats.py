@@ -22,7 +22,7 @@ NetHash = "1 H/s"
 coins = 0
 active_wallets = 0
 NextEpochHeight = 10
-TimeToEpoch = str(10 * BLOCK_TIME) + " secconds")
+TimeToEpoch = str(10 * BLOCK_TIME) + " secconds"
 EBlock = 0
 
 # bot params
