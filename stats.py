@@ -28,7 +28,7 @@ EBlock = 0
 # bot params
 update_channel = None
 msg = None
-update_interval = 5000
+update_interval = 5 # secs
 
 # node params
 node_addr = "127.0.0.1"
