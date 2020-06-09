@@ -58,7 +58,7 @@ def gen_embed():
   embed.add_field(name="Txn in mempool", value=MempoolTxnC, inline=True)
   embed.add_field(name="Est. total hash rate", value=NetHash, inline=True)
   embed.add_field(name="Coins in circulation", value=coins + " COOF", inline=True)
-  embed.add_field(name="Active Wallet Count", value=active_wallets", inline=True)
+  embed.add_field(name="Active Wallet Count", value=active_wallets, inline=True)
   embed.add_field(name="Next Epoch Height", value=NextEpochHeight, inline=True)
   embed.add_field(name="Est Time to Next Epoch", value=TimeToEpoch, inline=True)
   embed.add_field(name="Epoch Block", value=EBlock + "/10", inline=True)
