@@ -2,6 +2,8 @@ import discord
 from discord.ext import commands
 
 TOKEN  = ''
+bot = None
 
-bot = commands.Bot()
-bot.run(TOKEN)
+def launch():
+  bot = commands.Bot()
+  bot.run(TOKEN)
