@@ -88,11 +88,8 @@ async def on_ready_stats():
 
 client = discord.Client()
 client.run(TOKEN)
-        
-@client.event
-async def on_ready():
-    print('Logged in as')
-    print(bot.user.name)
-    print(bot.user.id)
-    print('------')
-    on_ready_stats()
+print('Logged in as')
+print(bot.user.name)
+print(bot.user.id)
+print('------')
+on_ready_stats()
