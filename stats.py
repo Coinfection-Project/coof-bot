@@ -1,4 +1,4 @@
-from bot import client
+from bot import bot as client
 import time
 import discord
 
