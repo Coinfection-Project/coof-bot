@@ -2,7 +2,7 @@ from bot import client
 import time
 import discord
 
-const BLOCK_TIME = 60 # secconds
+BLOCK_TIME = 60 # secconds
 
 # network param vars
 bCount = 0
@@ -64,8 +64,7 @@ def gen_embed():
   embed.add_field(name=Epoch Block, value=EBlock + "/10", inline=True)
   return embed
   
-@bot.event
-async def on_ready():
+async def on_ready_stats():
     for server in client.servers:
       if server.name == "Coinfection":
         for channel in server.channels:
