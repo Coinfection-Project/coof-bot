@@ -1,6 +1,8 @@
 TOKEN = open("discord.token","r").read()
 import discord
 import time
+import requests
+
 BLOCK_TIME = 60 # secconds
 
 # network param vars
@@ -35,11 +37,38 @@ node_port = "1234"
 node = None
 print("Starting")
 
+mining_algos = {
+  "doublesha256" : "Double-Sha256",
+  "scrypt": "Scrypt"
+}
+
 def update_stats():
+  global bCount,eNum, lBlockHash,lBlockAlgo, LBTxnC,LBAD
+  # block stuff
+  r = requests.get(node_addr + node_port + '/json_rpc/status')
+  if r.status_code != 200:
+    return False;
+  last_block = r.json()
+  bCount = last_block['height']
+  eNum = last_block['epoch']
+  lBlockHash = last_block['hash']
+  lBlockAlgo = mining_algos[last_block['algo']]
+  LBTxnC = last_block['transaction_count']
+  EBlock = int(last_block['height']) % 10
+  # diff stuff
+  r = requests.get(node_addr + node_port + '/json_rpc/difficulty')
+  if r.status_code != 200:
+    return False;
+  diff = r.json()
+  LBAD = diff[last_block['algo'] + '-difficulty']
+  
   return True # TODO
   
 def connect_node():
-  return None # TODO
+  r = requests.get(node_addr + node_port + '/json_rpc/status')
+  if r.status_code == 200:
+    return True
+  return False
 
 def gen_embed():
   embed=discord.Embed(title="Coinfection Network Stats", color=0xff0000)
