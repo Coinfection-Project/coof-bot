@@ -72,7 +72,7 @@ async def on_ready_stats():
             update_channel = channel
     if update_channel == None:
       print("Channel not found... ")
-    node = connect_node()
+      node = connect_node()
     else:
       while True:
         if msg == None:
